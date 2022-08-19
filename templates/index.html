@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hello, world!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  
+</head>
+<body>
+  <h1>Book Store !</h1>
+  
+  <form method="get" action='{% url "index" %}' >
+    <input type="text"  name="search"   class="searchText" placeholder="&#xF002; type to search..." autocomplete="on">
+
+    <div class="bookname">
+      {% for book in books %}
+      <table>
+
+        <tr>
+          <th>Book</th>
+          <th>Book price</th>
+          <th>Author Name</th>
+
+        </tr>
+        <tr>
+          <td>{{book.book_name}}</td>
+          <td>{{book.book_price}}</td>
+          <td>{{book.author}}</td>
+        </tr>
+       
+       
+      </table>
+     
+        
+        {% endfor %} 
+      
+    
+    <br>
+    <input type="submit"> </i> 
+  </form>
+</body>
+</html>
